@@ -1,0 +1,40 @@
+# 1. Configuración base: Detectar automáticamente archivos de texto
+* text=auto
+
+# 2. Asegurar que los archivos web siempre se traten como texto
+*.html text
+*.css text
+*.js text
+*.json text
+*.xml text
+*.svg text
+
+# 3. Archivos de imagen y medios (Binarios - No intentar leer como texto)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.mp4 binary
+*.mp3 binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+
+# 4. Archivos específicos de configuración (EditorConfig, Git, etc.)
+.gitattributes text
+.gitignore text
+.editorconfig text
+
+# 5. (Opcional) Ignorar archivos minificados en las estadísticas de GitHub
+# Esto evita que un archivo jquery.min.js enorme cuente como "Tu código"
+*.min.js linguist-generated
+*.min.css linguist-generated
+*-min.js linguist-generated
+*-min.css linguist-generated
+
+# 6. (Opcional) Si tienes carpetas de librerías externas, ignóralas también
+# Ajusta "vendor/" al nombre de tu carpeta si tienes una
+vendor/* linguist-vendor
